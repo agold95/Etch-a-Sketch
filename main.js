@@ -1,6 +1,6 @@
 const gridContainer = document.querySelector('.grid-container');
 const gridSize = document.querySelector('input');
-let squareSize = 8;
+let squareSize = 16;
 let gridValue = document.querySelector('.grid-size')
 let apply = document.querySelector('.apply')
 let resetButton = document.querySelector('.reset')
@@ -34,7 +34,7 @@ gridSize.addEventListener('input', (e) => {
     gridValue.textContent = `${squareSize}X${squareSize}`;
 });
 
-function reset () {
+function resetSketch () {
     while (gridContainer.firstChild) {
         gridContainer.removeChild(gridContainer.lastChild);
     }
@@ -42,7 +42,7 @@ function reset () {
 }
 
 apply.addEventListener('click', () => {
-    reset();
+    resetSketch();
 });
 
-resetButton.addEventListener('click', reset);
+resetButton.addEventListener('click', resetSketch);
